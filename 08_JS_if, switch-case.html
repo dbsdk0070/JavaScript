@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>if 실습</title>
+<script>
+
+    //------------------------------------------------
+    /* if문 (실습) 점수를 입력받고 점수에 따라  평가하고 결과를 화면에 출려(표시)
+        90이상 :A, 80이상 :B, 70이상 :C, 70미만 :D
+        출력형태 : 점수 90 -> 평과결과 : A
+    ******************************************************************/
+    
+    var score = prompt("점수입력 : ", "50");
+    document.write("입력값 : -", +score+ "-, 타입 : " + typeof score, "<br>");
+    document.write("isNaN : ", +isNaN(score), "<br>");
+    
+    let result = "평가안됨";
+    if (isNaN(score) || score === ""){
+        result = "숫자가 아님(NaN)";
+    } else if (score < 0 || score > 100 ){
+        result = "[입력오류]0~100까지의 숫자 입력"
+    } else if(score >= 90){
+        result = "A";
+    } else if (score < 90 && score >= 80){
+        result = "B";
+    } else if (score < 80 && score >= 70){
+        result = "C";
+    } else if (score < 70){
+        result = "D";
+    }
+    document.write("점수 : " + score + " - 평가결과 : "+ result + "<br>");
+    document.write("<hr>");
+    
+    //-------------------------------------------------------
+    //switch문
+    
+    //점수를 가지고 비교할 때에는 if, switch 문을 사용하는게 좋음
+    let divNumber = Math.floor(Number / 10); // 88 / 10 -> 8.8 -> 8
+    switch(Number){
+        case 10 :
+            result = "A";
+            break;
+        case 9 :
+            result = "A";
+            break;
+        case 8 :
+            result = "B";
+            break;
+        case 7 :
+            result = "C";
+            break;
+        default :
+            result = "D";
+            break;
+    }
+        
+   //------------------------------------------------------
+   document.write("------숫자문자열 vs 숫자 : 숫자형변환 ------<br>"); 
+   document.write("'100' > '20' : " + ('100' > '20'), "<br>"); //false 문자열 비교는 20이 더 큼
+   document.write(" 100 > 20 : " + (100 > 20), "<br>"); //true
+   document.write(" '100' > 20 : " + ('100' > 20), "<br>"); //true 문자열과 숫자 비교 : 문자열 100이 더 큼
+  
+   document.write("------문자열 vs 문자열 ------<br>"); 
+   document.write(" '100A' > '20' : " + ('100A' > '20'), "<br>"); //false 100A, 20 : 1보다 2가 더 크니까 20이 더 큼
+   document.write(" 'A100' > '20' : " + ('A100' > '20'), "<br>"); //false
+   document.write(" 'AAA' > '20' : " + ('AAA' > '20'), "<br>"); //false
+   document.write(" '100B' > '100A' : " + ('100B' > '100A'), "<br>"); //true
+    
+   document.write("------문자열(숫자아닌) vs 숫자 ------<br>");
+   document.write(" '100A' > 20 : " + ('100A' > 20), "<br>"); //false 100A, 20 : 1보다 2가 더 크니까 20이 더 큼
+   document.write(" 'A100' > 20 : " + ('A100' > 20), "<br>"); //false
+   document.write(" 'AAA' > 20 : " + ('AAA' > 20), "<br>"); //false
+   
+   document.write("---자바스크립트의 끝 ---", "<br>");
+</script>
+</head>
+<body>
+
+    
+    
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
