@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JS : function return</title>
+<script>
+	//리턴값이 있는 함수(function)
+	//function 함수명(파라미터){return 리턴값;}
+	function plus(a,b){
+		return a+b;
+	}
+	let sum = plus(100, 200);
+	document.write("plus(100, 200) : " + sum + "<br>");
+	document.write("plus(200, 300) : " + plus(200, 300) + "<br>");
+	document.write("plus(200, 300) : " + plus(200, 300) + "<br>");
+	
+	//============================================================
+	//function은 중복선언(동일이름) 마지막 선언된 함수가 사용됨
+	function test(){
+		document.write("-- :: test() 함수 실행<br>");
+	}
+	test();
+	
+	function test(param){	//자바에서는 중복선언 오류 발생
+		document.write("-- :: test() 함수 실행: " + param + "<br>"); //param의 파라미터 값이 없으므로 undefiend
+	}
+	test("홍길동!!!");	//test 함수 param의 파마리터 값 전달
+	document.write("<hr>")
+	
+	//함수명과 동일한 이름으로 변수 선언시 함수는 사용할 수 없게됨
+	document.write("test : " + test, "<br>");
+	var test = "홍길동";
+	document.write("test : " + test, "<br>");
+	
+	//test("김유신"); //Uncaught TypeError: test is not a function
+	
+	document.write("=========================================JS끝");
+</script>
+</head>
+<body>
+
+    
+    
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
