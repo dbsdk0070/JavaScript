@@ -10,24 +10,27 @@
     window.onload = function(){
         var imgbtn = document.getElementById("imgbtn");
         // 이벤트 속성에 콜백함수 등록
+        /*
         imgbtn.onmouseover = function(){
             imgbtn.firstElementChild.src = "images/btn2_yellow.png";
         };
         imgbtn.onmouseout = function(){
             imgbtn.firstElementChild.src = "images/btn2_gray.png";
         };
-		//------------------------
-		//addEventListener : 이벤트 중복 설정 가능
-		//addEventListener : ("이벤트명", 콜백함수);
-		//removeEventListener : ("이벤트명");
-		imgbtn.addEventListener("mouseover", function)(){
-			imgbtn.firstElementChild.src = "imges/btn2_yellow.png";
-		});
-		imgbtn.addEventListener("mouseout", changeGray);
-		function changeGray(){
-			imgbtn.firstElementChild.src = "imges/btn2_gray.png";
-		}
-        imgbtn.removeEventListener("mouseout", "changeGray");        
+        */
+        //-------------
+        //addEventListener : 이벤트 중복 설정 가능
+        //addEventListener("이벤트명", 콜백함수);
+        //removeEventListener("이벤트명");
+        imgbtn.addEventListener("mouseover", function(){
+            imgbtn.firstElementChild.src = "images/btn2_yellow.png";
+        });
+        imgbtn.addEventListener("mouseout", changeGray);
+        function changeGray(){
+            imgbtn.firstElementChild.src = "images/btn2_gray.png";
+        }
+        
+        imgbtn.removeEventListener("mouseout", changeGray);
     };
 </script>
 <style>
